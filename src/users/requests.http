@@ -1,0 +1,46 @@
+@url = http://localhost:3000/auth
+
+###Create user
+POST {{url}}/signup
+Content-Type: application/json
+
+{
+    "email": "admin@email.com",
+    "password": "password"
+}
+
+
+###Signin
+POST {{url}}/signin
+Content-Type: application/json
+
+{
+    "email": "admin@email.com",
+    "password": "password"
+}
+
+###Get currently sigin user
+GET {{url}}/whoami
+
+###Signout
+POST {{url}}/signout
+
+###Get all
+GET {{url}}
+
+###Get all for email
+GET {{url}}?email=user@email.com
+
+###Find user
+GET {{url}}/3
+
+###Update user
+PATCH {{url}}/1
+Content-Type: application/json
+
+{
+    "email": "user@email.com"
+}
+
+###Delete user
+DELETE {{url}}/1

@@ -1,0 +1,36 @@
+@url = http://localhost:3000/reports
+
+###Signin
+POST http://localhost:3000/auth/signin
+Content-Type: application/json
+
+{
+    "email": "admin@email.com",
+    "password": "password"
+}
+
+###Create report
+POST {{url}}
+Content-Type: application/json
+
+{
+    "make": "ford",
+    "model": "mustang",
+    "year": 2024,
+    "mileage": 1000,
+    "lng": 45,
+    "lat": 45,
+    "price": 1500
+}
+
+###Approve/Reject report
+PATCH {{url}}/4
+Content-Type: application/json
+
+{
+    "approved": true
+}
+
+
+###Get estimate
+GET {{url}}/estimate?make=ford&model=mustang&year=2024&mileage=1000&lng=45&lat=45`
